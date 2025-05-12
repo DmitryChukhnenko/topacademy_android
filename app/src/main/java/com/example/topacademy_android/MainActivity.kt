@@ -12,7 +12,7 @@ import com.example.topacademy_android.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    companion object{
+    companion object {
         private const val MAIN_ACTIVITY = "MAIN_ACTIVITY"
     }
 
