@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary_color">#6200EE</color>
-    <color name="button_text_color">#FFFFFF</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#CCCCCC</color>
     <color name="light_grey">#EFEFEF</color>
     <color name="red">#FF0000</color>
+    <color name="primary">#6200EE</color>
+    <color name="background_light">#FFFFFF</color>
+    <color name="background_dark">#121212</color>
+    <color name="error">#FF5252</color>
+    <color name="hint">#3C9419</color>
+    <color name="button_text">#FFFFFF</color>
 </resources>
