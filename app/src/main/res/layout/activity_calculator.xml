@@ -134,7 +134,7 @@
             android:id="@+id/btn_equals"
             style="@style/CalculatorButton"
             android:text="@string/equals"
-            app:backgroundTint="@color/primary_color"
+            app:backgroundTint="@color/primary"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1" />
 

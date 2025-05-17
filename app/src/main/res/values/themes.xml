@@ -1,9 +1,11 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.TopacAdemy_android" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<resources>
+    <style name="Theme.TopAcademy" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:windowBackground">@color/background_light</item>
+        <item name="editTextStyle">@style/EditTextStyle</item>
+        <item name="buttonStyle">@style/ButtonStyle</item>
     </style>
 
-    <style name="Theme.TopacAdemy_android" parent="Base.Theme.TopacAdemy_android" />
+    <style name="Theme.TopacAdemy_android" parent="Theme.TopAcademy" />
 </resources>
