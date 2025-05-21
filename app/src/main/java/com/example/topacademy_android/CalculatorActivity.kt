@@ -16,7 +16,10 @@ class CalculatorActivity : AppCompatActivity() {
         binding = ActivityCalculatorBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Цифры
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = getString(R.string.calculator_title)
+
         binding.btn0.setOnClickListener { appendToInput("0") }
         binding.btn1.setOnClickListener { appendToInput("1") }
         binding.btn2.setOnClickListener { appendToInput("2") }
@@ -29,13 +32,11 @@ class CalculatorActivity : AppCompatActivity() {
         binding.btn9.setOnClickListener { appendToInput("9") }
         binding.btnDot.setOnClickListener { appendToInput(".") }
 
-        // Операторы
         binding.btnAdd.setOnClickListener { appendToInput("+") }
         binding.btnSubtract.setOnClickListener { appendToInput("-") }
         binding.btnMultiply.setOnClickListener { appendToInput("*") }
         binding.btnDivide.setOnClickListener { appendToInput("/") }
 
-        // Управление
         binding.btnClear.setOnClickListener { clearInput() }
         binding.btnDelete.setOnClickListener { deleteLastChar() }
         binding.btnEquals.setOnClickListener { calculateResult() }
@@ -121,5 +122,10 @@ class CalculatorActivity : AppCompatActivity() {
 
     private fun updateDisplay() {
         binding.tvDisplay.text = currentInput.ifEmpty { "0" }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 }

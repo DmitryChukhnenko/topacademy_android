@@ -21,6 +21,10 @@ class ListActivity : AppCompatActivity() {
         binding = ActivityListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = getString(R.string.list_title)
+
         items.addAll(
             savedInstanceState?.getStringArrayList(stateKey) ?: loadSavedItems()
         )
@@ -61,5 +65,10 @@ class ListActivity : AppCompatActivity() {
         val prefs = getSharedPreferences("APP_PREFS", Context.MODE_PRIVATE)
         val json = Gson().toJson(items)
         prefs.edit { putString(prefsKey, json) }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 }

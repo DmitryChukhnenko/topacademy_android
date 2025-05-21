@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">TopAcademy</string>
-    <string name="hello_world">Hello World!</string>
     <string name="start">Начать</string>
-    <string name="calculator">Калькулятор</string>
-    <string name="list">Список</string>
-    <string name="weather">Погода</string>
     <string name="add_item_hint">Добавить элемент</string>
     <string name="delete_item">Удалить элемент</string>
+
     <string name="weather_title">Прогноз погоды</string>
+    <string name="home_title">Главный экран</string>
+    <string name="calculator_title">Калькулятор</string>
+    <string name="list_title">Список</string>
 
     <string name="my_name">Dmitry Chukhnenko</string>
 
@@ -16,6 +16,10 @@
     <string name="login_button">Войти</string>
     <string name="email_error">Некорректный email</string>
     <string name="password_error">Пароль должен быть длиннее 6 символов</string>
+
+    <string name="car_list_title">Список автомобилей</string>
+    <string name="currency">$</string>
+    <string name="car_image">Изображение автомобиля</string>
 
     <string name="default_display_value">0</string>
     <string name="clear">C</string>

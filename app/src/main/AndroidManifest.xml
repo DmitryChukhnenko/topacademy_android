@@ -25,6 +25,7 @@
         <activity android:name=".CalculatorActivity" />
         <activity android:name=".ListActivity" />
         <activity android:name=".WeatherActivity" />
+        <activity android:name=".CarListActivity" />
     </application>
 
 </manifest>

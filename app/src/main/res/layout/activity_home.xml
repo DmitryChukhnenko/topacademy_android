@@ -1,31 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/home"
-    android:orientation="vertical"
-    android:gravity="center"
-    tools:context=".HomeActivity"
-    android:padding="@dimen/default_padding">
+    tools:context=".HomeActivity">
 
-    <Button
-        android:id="@+id/btn_calculator"
-        style="@style/HomeButtonStyle"
-        android:text="@string/calculator"
-        app:icon="@drawable/ic_calculator" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/home_title"
+        app:titleTextColor="@color/white"
+        app:background="?attr/colorPrimary" />
 
-    <Button
-        android:id="@+id/btn_list"
-        style="@style/HomeButtonStyle"
-        android:text="@string/list"
-        app:icon="@drawable/ic_list" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="@dimen/default_padding"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    <Button
-        android:id="@+id/btn_weather"
-        style="@style/HomeButtonStyle"
-        android:text="@string/weather"
-        app:icon="@drawable/ic_weather" />
+        <Button
+            android:id="@+id/btn_calculator"
+            style="@style/HomeButtonStyle"
+            android:text="@string/calculator_title"
+            app:icon="@drawable/ic_calculator" />
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+        <Button
+            android:id="@+id/btn_list"
+            style="@style/HomeButtonStyle"
+            android:text="@string/list_title"
+            app:icon="@drawable/ic_list" />
+
+        <Button
+            android:id="@+id/btn_weather"
+            style="@style/HomeButtonStyle"
+            android:text="@string/weather_title"
+            app:icon="@drawable/ic_weather" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

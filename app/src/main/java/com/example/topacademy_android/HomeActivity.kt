@@ -2,24 +2,36 @@ package com.example.topacademy_android
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.topacademy_android.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityHomeBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        findViewById<Button>(R.id.btn_calculator).setOnClickListener {
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = getString(R.string.home_title)
+
+        binding.btnCalculator.setOnClickListener {
             startActivity(Intent(this, CalculatorActivity::class.java))
         }
 
-        findViewById<Button>(R.id.btn_list).setOnClickListener {
+        binding.btnList.setOnClickListener {
             startActivity(Intent(this, ListActivity::class.java))
         }
 
-        findViewById<Button>(R.id.btn_weather).setOnClickListener {
+        binding.btnWeather.setOnClickListener {
             startActivity(Intent(this, WeatherActivity::class.java))
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 }
