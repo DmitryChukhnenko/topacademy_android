@@ -28,6 +28,10 @@ class HomeActivity : AppCompatActivity() {
         binding.btnWeather.setOnClickListener {
             startActivity(Intent(this, WeatherActivity::class.java))
         }
+
+        binding.btnCarList.setOnClickListener {
+            startActivity(Intent(this, CarListActivity::class.java))
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

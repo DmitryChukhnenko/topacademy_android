@@ -42,6 +42,12 @@
             style="@style/HomeButtonStyle"
             android:text="@string/weather_title"
             app:icon="@drawable/ic_weather" />
+
+        <Button
+            android:id="@+id/btn_car_list"
+            style="@style/HomeButtonStyle"
+            android:text="@string/car_list_title"
+            app:icon="@drawable/ic_car" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,6 +11,11 @@
 
     <string name="my_name">Dmitry Chukhnenko</string>
 
+    <string name="weather_icon">Иконка погоды</string>
+    <string name="latitude_hint">Широта</string>
+    <string name="longitude_hint">Долгота</string>
+    <string name="update">Обновить</string>
+
     <string name="email_hint">Email</string>
     <string name="password_hint">Пароль</string>
     <string name="login_button">Войти</string>

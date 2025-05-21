@@ -13,7 +13,6 @@ class CarListActivity : AppCompatActivity() {
         binding = ActivityCarListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Моковые данные
         val cars = listOf(
             Car(
                 brand = "Toyota",
@@ -23,15 +22,44 @@ class CarListActivity : AppCompatActivity() {
                 cost = 30000,
                 imageResId = R.drawable.ic_car
             ),
-            // Добавьте другие автомобили
+            Car(
+                brand = "Honda",
+                model = "Civic",
+                year = 2023,
+                description = "Компактный седан с гибридным двигателем",
+                cost = 25000,
+                imageResId = R.drawable.ic_car
+            ),
+            Car(
+                brand = "Ford",
+                model = "Mustang",
+                year = 2021,
+                description = "Легендарный спортивный автомобиль",
+                cost = 45000,
+                imageResId = R.drawable.ic_car
+            ),
+            Car(
+                brand = "Tesla",
+                model = "Model S",
+                year = 2023,
+                description = "Электрический седан с автопилотом",
+                cost = 80000,
+                imageResId = R.drawable.ic_car
+            ),
+            Car(
+                brand = "BMW",
+                model = "X5",
+                year = 2022,
+                description = "Премиальный кроссовер",
+                cost = 70000,
+                imageResId = R.drawable.ic_car
+            )
         )
 
-        // Настройка Toolbar
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = getString(R.string.car_list_title)
 
-        // Настройка RecyclerView
         binding.rvCars.layoutManager = LinearLayoutManager(this)
         binding.rvCars.adapter = CarAdapter(cars)
     }
