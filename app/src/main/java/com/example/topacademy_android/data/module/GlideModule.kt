@@ -1,4 +1,4 @@
-package com.example.topacademy_android
+package com.example.topacademy_android.data.module
 
 import com.bumptech.glide.annotation.GlideModule
 import com.bumptech.glide.module.AppGlideModule

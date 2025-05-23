@@ -1,4 +1,4 @@
-package com.example.topacademy_android
+package com.example.topacademy_android.presentation.weather
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +9,8 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.topacademy_android.R
+import com.example.topacademy_android.domain.model.DataSeries
 import java.text.SimpleDateFormat
 import java.util.Locale
 

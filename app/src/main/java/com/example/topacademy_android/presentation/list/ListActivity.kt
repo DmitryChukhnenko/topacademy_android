@@ -1,4 +1,4 @@
-package com.example.topacademy_android
+package com.example.topacademy_android.presentation.list
 
 import android.content.Context
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.topacademy_android.databinding.ActivityListBinding
 import androidx.core.content.edit
+import com.example.topacademy_android.R
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 

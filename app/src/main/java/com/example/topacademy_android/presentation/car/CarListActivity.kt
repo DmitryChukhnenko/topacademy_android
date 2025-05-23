@@ -1,9 +1,11 @@
-package com.example.topacademy_android
+package com.example.topacademy_android.presentation.car
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import android.os.Bundle
+import com.example.topacademy_android.R
 import com.example.topacademy_android.databinding.ActivityCarListBinding
+import com.example.topacademy_android.domain.model.Car
 
 class CarListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCarListBinding

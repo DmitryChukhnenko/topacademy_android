@@ -1,10 +1,11 @@
-package com.example.topacademy_android
+package com.example.topacademy_android.presentation.weather
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.topacademy_android.R
 import com.example.topacademy_android.databinding.ActivityWeatherBinding
 
 class WeatherActivity : AppCompatActivity() {

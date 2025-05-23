@@ -1,4 +1,4 @@
-package com.example.topacademy_android
+package com.example.topacademy_android.presentation.car
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.View
@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.ImageView
 import android.view.LayoutInflater
+import com.example.topacademy_android.R
+import com.example.topacademy_android.domain.model.Car
 
 class CarAdapter(private val cars: List<Car>) : RecyclerView.Adapter<CarAdapter.CarViewHolder>() {
 

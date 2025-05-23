@@ -1,10 +1,12 @@
-package com.example.topacademy_android
+package com.example.topacademy_android.presentation.weather
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.topacademy_android.data.service.RetrofitClient
+import com.example.topacademy_android.domain.model.WeatherResponse
 import kotlinx.coroutines.launch
 
 class WeatherViewModel : ViewModel() {

@@ -1,4 +1,4 @@
-package com.example.topacademy_android
+package com.example.topacademy_android.domain.model
 
 data class WeatherResponse(
     val product: String,

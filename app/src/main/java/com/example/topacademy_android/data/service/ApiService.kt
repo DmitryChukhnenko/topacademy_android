@@ -1,5 +1,6 @@
-package com.example.topacademy_android
+package com.example.topacademy_android.data.service
 
+import com.example.topacademy_android.domain.model.WeatherResponse
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

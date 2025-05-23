@@ -15,7 +15,7 @@
         android:theme="@style/Theme.TopacAdemy_android"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,11 +23,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".CalculatorActivity" />
-        <activity android:name=".ListActivity" />
-        <activity android:name=".WeatherActivity" />
-        <activity android:name=".CarListActivity" />
+        <activity android:name=".presentation.home.HomeActivity" />
+        <activity android:name=".presentation.calculator.CalculatorActivity" />
+        <activity android:name=".presentation.list.ListActivity" />
+        <activity android:name=".presentation.weather.WeatherActivity" />
+        <activity android:name=".presentation.car.CarListActivity" />
     </application>
 
 </manifest>
