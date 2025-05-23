@@ -9,13 +9,18 @@ import android.view.LayoutInflater
 import com.example.topacademy_android.R
 import com.example.topacademy_android.domain.model.Car
 
-class CarAdapter(private val cars: List<Car>) : RecyclerView.Adapter<CarAdapter.CarViewHolder>() {
+class CarAdapter(private var cars: List<Car>) : RecyclerView.Adapter<CarAdapter.CarViewHolder>() {
 
     inner class CarViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val ivCar: ImageView = itemView.findViewById(R.id.iv_car)
         val tvBrandModel: TextView = itemView.findViewById(R.id.tv_brand_model)
         val tvYear: TextView = itemView.findViewById(R.id.tv_year)
         val tvCost: TextView = itemView.findViewById(R.id.tv_cost)
+    }
+
+    fun updateData(newCars: List<Car>) {
+        cars = newCars
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarViewHolder {

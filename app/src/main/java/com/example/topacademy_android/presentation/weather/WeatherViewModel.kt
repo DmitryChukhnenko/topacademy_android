@@ -1,35 +1,25 @@
 package com.example.topacademy_android.presentation.weather
 
-import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.topacademy_android.data.service.RetrofitClient
 import com.example.topacademy_android.domain.model.WeatherResponse
+import com.example.topacademy_android.domain.repository.WeatherRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class WeatherViewModel : ViewModel() {
-    private val _weatherData = MutableLiveData<WeatherResponse>()
-    val weatherData: LiveData<WeatherResponse> = _weatherData
+@HiltViewModel
+class WeatherViewModel @Inject constructor(
+    private val weatherRepo: WeatherRepository
+) : ViewModel() {
+    private val _weatherData = MutableStateFlow<WeatherResponse?>(null)
+    val weatherData: StateFlow<WeatherResponse?> = _weatherData
 
     fun loadWeather(lat: Double, lon: Double) {
-        if (lat !in -90.0..90.0 || lon !in -180.0..180.0) {
-            Log.e("Weather", "Invalid coordinates")
-            return
-        }
         viewModelScope.launch {
-            try {
-                val response = RetrofitClient.weatherApi.getWeatherForecast(lon, lat)
-                if (response.isSuccessful) {
-                    Log.d("Weather", "Data: ${response.body()}")
-                    _weatherData.postValue(response.body())
-                } else {
-                    Log.e("Weather", "Error code: ${response.code()}")
-                }
-            } catch (e: Exception) {
-                Log.e("Weather", "Network error: ${e.message}")
-            }
+            _weatherData.value = weatherRepo.getWeather(lat, lon)
         }
     }
 }

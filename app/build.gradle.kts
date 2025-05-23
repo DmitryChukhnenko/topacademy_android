@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-kapt")
 }
 
 android {
@@ -37,6 +38,10 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    packagingOptions {
+        resources.excludes += "META-INF/gradle/incremental.annotation.processors"
+        resources.excludes += "META-INF/*.kotlin_module"
+    }
 }
 
 dependencies {
@@ -59,4 +64,7 @@ dependencies {
     implementation (libs.androidx.lifecycle.livedata.ktx)
     implementation (libs.logging.interceptor)
     implementation(libs.exp4j)
+
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
 }

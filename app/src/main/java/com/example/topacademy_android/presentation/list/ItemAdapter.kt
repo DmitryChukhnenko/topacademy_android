@@ -16,6 +16,12 @@ class ItemAdapter(private val items: MutableList<String>, private val onDelete: 
         val btnDelete: ImageButton = view.findViewById(R.id.btn_delete)
     }
 
+    fun updateData(newItems: MutableList<String>) {
+        items.clear()
+        items.addAll(newItems)
+        notifyDataSetChanged()
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_list, parent, false)

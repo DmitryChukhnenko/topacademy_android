@@ -4,9 +4,13 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.topacademy_android.R
 import com.example.topacademy_android.databinding.ActivityWeatherBinding
+import kotlinx.coroutines.launch
 
 class WeatherActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWeatherBinding
@@ -51,10 +55,18 @@ class WeatherActivity : AppCompatActivity() {
     }
 
     private fun setupObservers() {
-        viewModel.weatherData.observe(this) { response ->
-            response?.dataseries?.let { data ->
-                binding.rvWeather.adapter = WeatherAdapter(data) { item ->
-                    Toast.makeText(this, "Погода: ${item.weather}", Toast.LENGTH_SHORT).show()
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.weatherData.collect { response ->
+                    response?.dataseries?.let { data ->
+                        binding.rvWeather.adapter = WeatherAdapter(data) { item ->
+                            Toast.makeText(
+                                this@WeatherActivity,
+                                "Погода: ${item.weather}",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
                 }
             }
         }
