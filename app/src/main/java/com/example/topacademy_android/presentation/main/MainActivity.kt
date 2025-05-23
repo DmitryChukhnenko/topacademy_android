@@ -1,13 +1,17 @@
-package com.example.topacademy_android
+package com.example.topacademy_android.presentation.main
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.example.topacademy_android.R
 import com.example.topacademy_android.databinding.ActivityMainBinding
+import com.example.topacademy_android.presentation.home.HomeActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,28 +22,14 @@ class MainActivity : AppCompatActivity() {
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
 
-            if (isValidEmail(email) && isValidPassword(password)) {
-                startActivity(Intent(this, HomeActivity::class.java))
-            } else {
-                showError()
-            }
+            val isValid = viewModel.validateCredentials(email, password)
+            if (isValid) startActivity(Intent(this, HomeActivity::class.java))
+            else showError()
         }
-    }
-
-    private fun isValidEmail(email: String): Boolean {
-        return Patterns.EMAIL_ADDRESS.matcher(email).matches()
-    }
-
-    private fun isValidPassword(password: String): Boolean {
-        return password.length > 6
     }
 
     private fun showError() {
-        val errorMessage = buildString {
-            if (!isValidEmail(binding.etEmail.text.toString())) append(getString(R.string.email_error))
-            if (!isValidPassword(binding.etPassword.text.toString())) append("\n${getString(R.string.password_error)}")
-        }
-        binding.tvError.text = errorMessage
+        binding.tvError.text = "Некорректный ввод"
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

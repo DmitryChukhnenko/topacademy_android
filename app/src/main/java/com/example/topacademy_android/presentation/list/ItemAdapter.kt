@@ -1,4 +1,4 @@
-package com.example.topacademy_android
+package com.example.topacademy_android.presentation.list
 
 import android.view.View
 import android.view.ViewGroup
@@ -6,6 +6,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
+import com.example.topacademy_android.R
 
 class ItemAdapter(private val items: MutableList<String>, private val onDelete: (Int) -> Unit) :
     RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
@@ -13,6 +14,12 @@ class ItemAdapter(private val items: MutableList<String>, private val onDelete: 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tvItem: TextView = view.findViewById(R.id.tv_item)
         val btnDelete: ImageButton = view.findViewById(R.id.btn_delete)
+    }
+
+    fun updateData(newItems: MutableList<String>) {
+        items.clear()
+        items.addAll(newItems)
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

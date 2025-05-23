@@ -28,4 +28,8 @@
         <item name="boxStrokeColor">@color/light_grey</item>
         <item name="hintTextColor">@color/hint</item>
     </style>
+
+    <style name="ToolbarStyle" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
 </resources>
