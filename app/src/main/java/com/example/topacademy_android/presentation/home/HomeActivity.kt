@@ -20,7 +20,7 @@ class HomeActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = getString(R.string.home_title)
+        supportActionBar?.title = getString(R.string.title_home)
 
         binding.btnCalculator.setOnClickListener {
             startActivity(Intent(this, CalculatorActivity::class.java))

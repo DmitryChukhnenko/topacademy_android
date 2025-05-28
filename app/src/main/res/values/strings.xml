@@ -1,50 +1,65 @@
 <resources>
+    <!-- Общие -->
     <string name="app_name">TopAcademy</string>
-    <string name="start">Начать</string>
-    <string name="add_item_hint">Добавить элемент</string>
-    <string name="delete_item">Удалить элемент</string>
+    <string name="action_add">Добавить</string>
+    <string name="action_update">Обновить</string>
+    <string name="action_delete">Удалить</string>
+    <string name="action_clear">Очистить</string>
+    <string name="action_calculate">Вычислить</string>
+    <string name="action_login">Войти</string>
 
-    <string name="weather_title">Прогноз погоды</string>
-    <string name="home_title">Главный экран</string>
-    <string name="calculator_title">Калькулятор</string>
-    <string name="list_title">Список</string>
+    <!-- Заголовки -->
+    <string name="title_home">Главный экран</string>
+    <string name="title_calculator">Калькулятор</string>
+    <string name="title_list">Список элементов</string>
+    <string name="title_weather">Прогноз погоды</string>
+    <string name="title_car_list">Список автомобилей</string>
+    <string name="title_login">Авторизация</string>
 
-    <string name="my_name">Dmitry Chukhnenko</string>
+    <!-- Подсказки -->
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Пароль</string>
+    <string name="hint_latitude">Широта</string>
+    <string name="hint_longitude">Долгота</string>
+    <string name="hint_new_item">Новый элемент</string>
 
-    <string name="weather_icon">Иконка погоды</string>
-    <string name="latitude_hint">Широта</string>
-    <string name="longitude_hint">Долгота</string>
-    <string name="update">Обновить</string>
+    <!-- Ошибки -->
+    <string name="error_invalid_email">Некорректный email</string>
+    <string name="error_short_password">Пароль должен быть длиннее 6 символов</string>
+    <string name="error_invalid_coordinates">Некорректные координаты</string>
 
-    <string name="email_hint">Email</string>
-    <string name="password_hint">Пароль</string>
-    <string name="login_button">Войти</string>
-    <string name="email_error">Некорректный email</string>
-    <string name="password_error">Пароль должен быть длиннее 6 символов</string>
+    <!-- Контент -->
+    <string name="content_car_image">Изображение автомобиля</string>
+    <string name="content_weather_icon">Иконка погоды</string>
+    <string name="content_delete_item">Удалить элемент</string>
 
-    <string name="car_list_title">Список автомобилей</string>
+    <!-- Форматы -->
+    <string name="format_currency">$%d</string>
+    <string name="format_temperature">%d°/%d°</string>
+    <string name="format_car_model">%s %s</string>
+
+    <!-- Калькулятор -->
+    <string name="calculator_display_default">0</string>
+    <string name="calculator_btn_clear">C</string>
+    <string name="calculator_btn_divide">÷</string>
+    <string name="calculator_btn_multiply">×</string>
+    <string name="calculator_btn_delete">⌫</string>
+    <string name="calculator_btn_subtract">-</string>
+    <string name="calculator_btn_add">+</string>
+    <string name="calculator_btn_equals">=</string>
+    <string name="calculator_btn_dot">.</string>
+    <string name="calculator_btn_0">0</string>
+    <string name="calculator_btn_1">1</string>
+    <string name="calculator_btn_2">2</string>
+    <string name="calculator_btn_3">3</string>
+    <string name="calculator_btn_4">4</string>
+    <string name="calculator_btn_5">5</string>
+    <string name="calculator_btn_6">6</string>
+    <string name="calculator_btn_7">7</string>
+    <string name="calculator_btn_8">8</string>
+    <string name="calculator_btn_9">9</string>
+    <string name="calculator_placeholder">0</string>
+
+    <!-- Текст -->
     <string name="currency">$</string>
-    <string name="car_image">Изображение автомобиля</string>
-
-    <string name="default_display_value">0</string>
-    <string name="clear">C</string>
-    <string name="divide">÷</string>
-    <string name="multiply">×</string>
-    <string name="delete">⌫</string>
-    <string name="subtract">-</string>
-    <string name="add">+</string>
-    <string name="equals">=</string>
-    <string name="dot">.</string>
-    <string name="zero">0</string>
-    <string name="one">1</string>
-    <string name="two">2</string>
-    <string name="three">3</string>
-    <string name="four">4</string>
-    <string name="five">5</string>
-    <string name="six">6</string>
-    <string name="seven">7</string>
-    <string name="eight">8</string>
-    <string name="nine">9</string>
-    <string name="placeholder">0</string>
-    <string name="image">image</string>
 </resources>

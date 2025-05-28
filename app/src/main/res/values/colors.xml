@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Базовые цвета -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="grey">#CCCCCC</color>
-    <color name="light_grey">#EFEFEF</color>
-    <color name="red">#FF0000</color>
-    <color name="primary">#6200EE</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- Основная палитра -->
+    <color name="primary_500">#6200EE</color>
+    <color name="primary_variant_700">#3700B3</color>
+    <color name="secondary_500">#03DAC6</color>
+    <color name="error_400">#FF5252</color>
+    <color name="error_900">#B00020</color>
+
+    <!-- Фоны -->
     <color name="background_light">#FFFFFF</color>
     <color name="background_dark">#121212</color>
-    <color name="error">#FF5252</color>
-    <color name="hint">#3C9419</color>
-    <color name="button_text">#FFFFFF</color>
+    <color name="surface_light">#EEEEEE</color>
+    <color name="surface_dark">#2D2D2D</color>
+    <color name="surface_variant_light">#F5F5F5</color>
+    <color name="surface_variant_dark">#1E1E1E</color>
 
-    <color name="hot">#FF5722</color>
-    <color name="cold">#2196F3</color>
-    <color name="normal">#4CAF50</color>
+    <!-- Текст -->
+    <color name="text_primary_light">@color/black</color>
+    <color name="text_primary_dark">@color/white</color>
+    <color name="text_secondary_light">#62000000</color>
+    <color name="text_secondary_dark">#B3FFFFFF</color>
+    <color name="text_hint">#3C9419</color>
+    <color name="text_error">@color/error_400</color>
+
+    <!-- Погода -->
+    <color name="weather_hot">#FF5722</color>
+    <color name="weather_cold">#2196F3</color>
+    <color name="weather_normal">#4CAF50</color>
 </resources>

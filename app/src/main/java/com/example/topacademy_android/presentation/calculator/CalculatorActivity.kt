@@ -27,7 +27,7 @@ class CalculatorActivity : AppCompatActivity() {
     private fun setupToolbar() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = getString(R.string.calculator_title)
+        supportActionBar?.title = getString(R.string.title_calculator)
     }
 
     private fun setupClickListeners() {
@@ -58,7 +58,7 @@ class CalculatorActivity : AppCompatActivity() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.expression.collect { expr ->
-                    binding.tvDisplay.text = expr.ifEmpty { getString(R.string.placeholder) }
+                    binding.tvDisplay.text = expr.ifEmpty { getString(R.string.calculator_placeholder) }
                 }
             }
         }

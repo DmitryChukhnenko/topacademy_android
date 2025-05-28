@@ -10,44 +10,46 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="@dimen/toolbar_height"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="@string/home_title"
-        app:titleTextColor="@color/white"
-        app:background="?attr/colorPrimary" />
+        app:title="@string/title_home"
+        style="@style/ToolbarStyle" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/_0dp"
         android:orientation="vertical"
         android:gravity="center"
-        android:padding="@dimen/default_padding"
+        android:padding="@dimen/padding_default"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
             android:id="@+id/btn_calculator"
-            style="@style/HomeButtonStyle"
-            android:text="@string/calculator_title"
+            style="@style/ButtonStyle.Primary"
+            android:text="@string/title_calculator"
+            android:drawablePadding="@dimen/padding_small"
             app:icon="@drawable/ic_calculator" />
 
         <Button
             android:id="@+id/btn_list"
-            style="@style/HomeButtonStyle"
-            android:text="@string/list_title"
+            style="@style/ButtonStyle.Primary"
+            android:text="@string/title_list"
+            android:drawablePadding="@dimen/padding_small"
             app:icon="@drawable/ic_list" />
 
         <Button
             android:id="@+id/btn_weather"
-            style="@style/HomeButtonStyle"
-            android:text="@string/weather_title"
+            style="@style/ButtonStyle.Primary"
+            android:text="@string/title_weather"
+            android:drawablePadding="@dimen/padding_small"
             app:icon="@drawable/ic_weather" />
 
         <Button
             android:id="@+id/btn_car_list"
-            style="@style/HomeButtonStyle"
-            android:text="@string/car_list_title"
+            style="@style/ButtonStyle.Primary"
+            android:text="@string/title_car_list"
+            android:drawablePadding="@dimen/padding_small"
             app:icon="@drawable/ic_car" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

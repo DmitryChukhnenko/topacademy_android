@@ -1,9 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Размеры в dp -->
+    <dimen name="_0dp">0dp</dimen>
+    <dimen name="_1dp">1dp</dimen>
+    <dimen name="_2dp">2dp</dimen>
+    <dimen name="_4dp">4dp</dimen>
+    <dimen name="_8dp">8dp</dimen>
+    <dimen name="_16dp">16dp</dimen>
     <dimen name="_20dp">20dp</dimen>
-    <dimen name="default_padding">16dp</dimen>
-    <dimen name="button_corner_radius">8dp</dimen>
-    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="_24dp">24dp</dimen>
+    <dimen name="_48dp">48dp</dimen>
+    <dimen name="_64dp">64dp</dimen>
+    <dimen name="_80dp">80dp</dimen>
+    <dimen name="_120dp">120dp</dimen>
+    <dimen name="_300dp">300dp</dimen>
+
+    <!-- Размеры текста в sp -->
+    <dimen name="_14sp">14sp</dimen>
+    <dimen name="_16sp">16sp</dimen>
+    <dimen name="_18sp">18sp</dimen>
+    <dimen name="_24sp">24sp</dimen>
+    <dimen name="_32sp">32sp</dimen>
+    <dimen name="_48sp">48sp</dimen>
+
+    <!-- Радиусы -->
+    <dimen name="corner_radius_4dp">4dp</dimen>
+    <dimen name="corner_radius_8dp">8dp</dimen>
+
+    <!-- Размеры элементов -->
+    <dimen name="icon_size_48dp">48dp</dimen>
+    <dimen name="icon_size_64dp">64dp</dimen>
+    <dimen name="action_button_size_48dp">48dp</dimen>
+
+    <!-- Отступы -->
+    <dimen name="padding_tiny">4dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_default">16dp</dimen>
+    <dimen name="margin_small">16dp</dimen>
     <dimen name="margin_default">24dp</dimen>
-    <dimen name="edittext_width">300dp</dimen>
+
+    <!-- Высоты элементов -->
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="display_height">120dp</dimen>
 </resources>

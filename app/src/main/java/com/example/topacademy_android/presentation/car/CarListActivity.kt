@@ -18,7 +18,7 @@ class CarListActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = getString(R.string.car_list_title)
+        supportActionBar?.title = getString(R.string.title_car_list)
 
         binding.rvCars.layoutManager = LinearLayoutManager(this)
         binding.rvCars.adapter = CarAdapter(viewModel.cars.value)
