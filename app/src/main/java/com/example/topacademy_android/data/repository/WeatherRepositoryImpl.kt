@@ -1,15 +1,11 @@
 package com.example.topacademy_android.data.repository
 
 import android.util.Log
-import androidx.lifecycle.viewModelScope
-import com.example.topacademy_android.data.service.RetrofitClient
 import com.example.topacademy_android.data.service.WeatherApi
 import com.example.topacademy_android.domain.model.WeatherResponse
 import com.example.topacademy_android.domain.repository.WeatherRepository
-import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-class WeatherRepositoryImpl @Inject constructor(
+class WeatherRepositoryImpl(
     private val api: WeatherApi
 ) : WeatherRepository {
     override suspend fun getWeather(lat: Double, lon: Double): WeatherResponse? {

@@ -3,13 +3,13 @@ package com.example.topacademy_android.presentation.car
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import android.os.Bundle
-import androidx.activity.viewModels
 import com.example.topacademy_android.R
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.example.topacademy_android.databinding.ActivityCarListBinding
 
 class CarListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCarListBinding
-    private val viewModel: CarListViewModel by viewModels()
+    private val viewModel: CarListViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

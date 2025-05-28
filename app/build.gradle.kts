@@ -38,10 +38,6 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-    packagingOptions {
-        resources.excludes += "META-INF/gradle/incremental.annotation.processors"
-        resources.excludes += "META-INF/*.kotlin_module"
-    }
 }
 
 dependencies {
@@ -58,13 +54,14 @@ dependencies {
     implementation (libs.retrofit)
     implementation (libs.converter.gson)
     implementation (libs.glide)
-    annotationProcessor (libs.compiler)
+    kapt(libs.compiler)
     implementation (libs.kotlinx.coroutines.android)
     implementation (libs.androidx.lifecycle.viewmodel.ktx)
     implementation (libs.androidx.lifecycle.livedata.ktx)
     implementation (libs.logging.interceptor)
     implementation(libs.exp4j)
 
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.android.compiler)
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
+    implementation (libs.koin.androidx.navigation)
 }

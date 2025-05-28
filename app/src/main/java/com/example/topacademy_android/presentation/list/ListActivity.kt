@@ -1,19 +1,19 @@
 package com.example.topacademy_android.presentation.list
 
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.example.topacademy_android.databinding.ActivityListBinding
 import com.example.topacademy_android.R
 import kotlinx.coroutines.launch
 
 class ListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityListBinding
-    private val viewModel: ListViewModel by viewModels()
+    private val viewModel: ListViewModel by viewModel()
     private lateinit var adapter: ItemAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {

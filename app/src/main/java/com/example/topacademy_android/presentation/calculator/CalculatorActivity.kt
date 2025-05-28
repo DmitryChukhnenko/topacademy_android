@@ -1,24 +1,18 @@
 package com.example.topacademy_android.presentation.calculator
 
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.topacademy_android.R
 import com.example.topacademy_android.databinding.ActivityCalculatorBinding
-import com.example.topacademy_android.data.repository.CalculatorRepositoryImpl
-import com.example.topacademy_android.domain.usecase.CalculateUseCase
 import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CalculatorActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCalculatorBinding
-    private val viewModel: CalculatorViewModel by viewModels {
-        CalculatorViewModelFactory(
-            CalculateUseCase(CalculatorRepositoryImpl())
-        )
-    }
+    private val viewModel: CalculatorViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

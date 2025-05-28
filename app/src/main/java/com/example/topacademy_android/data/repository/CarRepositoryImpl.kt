@@ -3,9 +3,8 @@ package com.example.topacademy_android.data.repository
 import com.example.topacademy_android.R
 import com.example.topacademy_android.domain.model.Car
 import com.example.topacademy_android.domain.repository.CarRepository
-import javax.inject.Inject
 
-class CarRepositoryImpl @Inject constructor() : CarRepository {
+class CarRepositoryImpl : CarRepository {
     override fun getCars(): List<Car> {
         return listOf(
             Car(

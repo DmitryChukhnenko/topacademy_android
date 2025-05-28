@@ -5,9 +5,8 @@ import androidx.core.content.edit
 import com.example.topacademy_android.domain.repository.ListRepository
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import javax.inject.Inject
 
-class ListRepositoryImpl @Inject constructor(
+class ListRepositoryImpl(
     private val prefs: SharedPreferences
 ) : ListRepository {
     private val type = object : TypeToken<List<String>>() {}.type
