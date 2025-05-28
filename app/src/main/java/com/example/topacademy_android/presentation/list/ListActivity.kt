@@ -51,7 +51,7 @@ class ListActivity : AppCompatActivity() {
     private fun setupToolbar() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = getString(R.string.list_title)
+        supportActionBar?.title = getString(R.string.title_list)
     }
 
     private fun observeViewModel() {

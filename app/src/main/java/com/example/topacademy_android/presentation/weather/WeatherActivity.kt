@@ -30,7 +30,7 @@ class WeatherActivity : AppCompatActivity() {
     private fun setupToolbar() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = getString(R.string.weather_title)
+        supportActionBar?.title = getString(R.string.title_weather)
     }
 
     private fun setupUI() {

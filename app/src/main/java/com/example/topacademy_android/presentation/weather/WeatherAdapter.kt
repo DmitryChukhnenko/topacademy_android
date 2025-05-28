@@ -53,9 +53,9 @@ class WeatherAdapter(
             .into(holder.ivIcon)
 
         val bgColor = when {
-            item.temp2m.max > 30 -> R.color.hot
-            item.temp2m.max < 10 -> R.color.cold
-            else -> R.color.normal
+            item.temp2m.max > 30 -> R.color.weather_hot
+            item.temp2m.max < 10 -> R.color.weather_cold
+            else -> R.color.weather_normal
         }
         holder.cardView.setCardBackgroundColor(ContextCompat.getColor(holder.itemView.context, bgColor))
 
