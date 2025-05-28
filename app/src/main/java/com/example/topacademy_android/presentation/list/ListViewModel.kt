@@ -1,14 +1,16 @@
 package com.example.topacademy_android.presentation.list
 
 import androidx.lifecycle.ViewModel
-import com.example.topacademy_android.domain.repository.ListRepository
 import androidx.lifecycle.viewModelScope
+import com.example.topacademy_android.domain.usecase.LoadItemsUseCase
+import com.example.topacademy_android.domain.usecase.SaveItemsUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class ListViewModel(
-    private val repository: ListRepository
+    private val loadItemsUseCase: LoadItemsUseCase,
+    private val saveItemsUseCase: SaveItemsUseCase
 ) : ViewModel() {
     private val _items = MutableStateFlow<List<String>>(emptyList())
     val items: StateFlow<List<String>> = _items
@@ -19,7 +21,8 @@ class ListViewModel(
 
     fun addItem(item: String) {
         viewModelScope.launch {
-            repository.saveItems(_items.value + item)
+            val newList = _items.value + item
+            saveItemsUseCase(newList)
             loadItems()
         }
     }
@@ -27,14 +30,14 @@ class ListViewModel(
     fun deleteItem(position: Int) {
         viewModelScope.launch {
             val newList = _items.value.toMutableList().apply { removeAt(position) }
-            repository.saveItems(newList)
+            saveItemsUseCase(newList)
             loadItems()
         }
     }
 
     private fun loadItems() {
         viewModelScope.launch {
-            _items.value = repository.loadItems()
+            _items.value = loadItemsUseCase()
         }
     }
 }

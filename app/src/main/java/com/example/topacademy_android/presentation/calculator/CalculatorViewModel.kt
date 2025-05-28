@@ -32,7 +32,7 @@ class CalculatorViewModel(
     fun calculate() {
         viewModelScope.launch {
             try {
-                val result = calculateUseCase.execute(_expression.value)
+                val result = calculateUseCase(_expression.value)
                 _result.value = result.toString()
                 _expression.value = result.toString()
             } catch (e: Exception) {
