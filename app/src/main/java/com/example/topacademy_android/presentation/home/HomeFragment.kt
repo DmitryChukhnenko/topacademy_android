@@ -2,7 +2,7 @@ package com.example.topacademy_android.presentation.home
 
 import android.os.Bundle
 import android.view.View
-import androidx.core.bundle.bundleOf
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.topacademy_android.R
