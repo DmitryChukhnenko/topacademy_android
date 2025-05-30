@@ -62,4 +62,6 @@
 
     <!-- Текст -->
     <string name="currency">$</string>
+    <string name="base_lat">55.7558</string>
+    <string name="base_lon">37.6176</string>
 </resources>

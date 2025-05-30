@@ -1,27 +1,27 @@
 package com.example.topacademy_android.presentation.list
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import com.example.topacademy_android.databinding.ActivityListBinding
-import com.example.topacademy_android.R
+import com.example.topacademy_android.databinding.FragmentListBinding
 import kotlinx.coroutines.launch
+import com.example.topacademy_android.R
 
-class ListActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityListBinding
+class ListFragment : Fragment(R.layout.fragment_list) {
     private val viewModel: ListViewModel by viewModel()
+    private lateinit var binding: FragmentListBinding
     private lateinit var adapter: ItemAdapter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityListBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentListBinding.bind(view)
 
-        setupToolbar()
         setupRecyclerView()
         setupListeners()
         observeViewModel()
@@ -30,10 +30,8 @@ class ListActivity : AppCompatActivity() {
     private fun setupRecyclerView() {
         adapter = ItemAdapter(viewModel.items.value.toMutableList()) { position ->
             viewModel.deleteItem(position)
-            adapter.notifyItemRemoved(position)
         }
-
-        binding.rvItems.layoutManager = LinearLayoutManager(this)
+        binding.rvItems.layoutManager = LinearLayoutManager(requireContext())
         binding.rvItems.adapter = adapter
     }
 
@@ -42,30 +40,18 @@ class ListActivity : AppCompatActivity() {
             val newItem = binding.etNewItem.text.toString().trim()
             if (newItem.isNotEmpty()) {
                 viewModel.addItem(newItem)
-                adapter.notifyItemInserted(viewModel.items.value.size - 1)
                 binding.etNewItem.text?.clear()
             }
         }
     }
 
-    private fun setupToolbar() {
-        setSupportActionBar(binding.toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = getString(R.string.title_list)
-    }
-
     private fun observeViewModel() {
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.items.collect { items ->
                     adapter.updateData(items.toMutableList())
                 }
             }
         }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        finish()
-        return true
     }
 }

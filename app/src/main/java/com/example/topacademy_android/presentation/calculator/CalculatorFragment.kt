@@ -1,37 +1,30 @@
 package com.example.topacademy_android.presentation.calculator
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.topacademy_android.R
-import com.example.topacademy_android.databinding.ActivityCalculatorBinding
+import com.example.topacademy_android.databinding.FragmentCalculatorBinding
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class CalculatorActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityCalculatorBinding
+class CalculatorFragment : Fragment(R.layout.fragment_calculator) {
     private val viewModel: CalculatorViewModel by viewModel()
+    private lateinit var binding: FragmentCalculatorBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityCalculatorBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentCalculatorBinding.bind(view)
 
-        setupToolbar()
         setupClickListeners()
         observeViewModel()
     }
 
-    private fun setupToolbar() {
-        setSupportActionBar(binding.toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = getString(R.string.title_calculator)
-    }
-
     private fun setupClickListeners() {
-        binding.btn0.setOnClickListener { viewModel.appendToInput("0") }
         binding.btn0.setOnClickListener { viewModel.appendToInput("0") }
         binding.btn1.setOnClickListener { viewModel.appendToInput("1") }
         binding.btn2.setOnClickListener { viewModel.appendToInput("2") }
@@ -55,7 +48,7 @@ class CalculatorActivity : AppCompatActivity() {
     }
 
     private fun observeViewModel() {
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.expression.collect { expr ->
                     binding.tvDisplay.text = expr.ifEmpty { getString(R.string.calculator_placeholder) }
@@ -63,7 +56,7 @@ class CalculatorActivity : AppCompatActivity() {
             }
         }
 
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.result.collect { res ->
                     if (res.isNotEmpty()) {
@@ -72,10 +65,5 @@ class CalculatorActivity : AppCompatActivity() {
                 }
             }
         }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        finish()
-        return true
     }
 }
