@@ -12,13 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="@dimen/padding_default"
+        android:padding="@dimen/padding_small"
         android:background="?attr/selectableItemBackground">
 
         <ImageView
             android:id="@+id/iv_weather_icon"
-            android:layout_width="@dimen/icon_size_64dp"
-            android:layout_height="@dimen/icon_size_64dp"
+            android:layout_width="@dimen/icon_size_48dp"
+            android:layout_height="@dimen/icon_size_48dp"
             android:contentDescription="@string/content_weather_icon" />
 
         <LinearLayout
