@@ -17,6 +17,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentMainBinding.bind(view)
 
+        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
+
         binding.btnLogin.setOnClickListener {
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
@@ -27,5 +29,10 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 binding.tvError.text = "Некорректный ввод"
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        (requireActivity() as AppCompatActivity).supportActionBar?.show()
     }
 }
