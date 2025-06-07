@@ -8,64 +8,42 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.topacademy_android.presentation.main.MainFragment"
-        android:label="@string/title_login"
+        android:label="MainFragment"
         tools:layout="@layout/fragment_main">
         <action
-            android:id="@+id/action_mainFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:popUpTo="@id/mainFragment"
-            app:popUpToInclusive="true" />
+            android:id="@+id/action_mainFragment_to_tabs"
+            app:destination="@id/tabs_graph" />
     </fragment>
 
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.topacademy_android.presentation.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_homeFragment_to_calculatorFragment"
-            app:destination="@id/calculatorFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_listFragment"
-            app:destination="@id/listFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_weatherFragment"
-            app:destination="@id/weatherFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_carListFragment"
-            app:destination="@id/carListFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/calculatorFragment"
-        android:name="com.example.topacademy_android.presentation.calculator.CalculatorFragment"
-        android:label="@string/title_calculator"
-        tools:layout="@layout/fragment_calculator" />
-
-    <fragment
-        android:id="@+id/listFragment"
-        android:name="com.example.topacademy_android.presentation.list.ListFragment"
-        android:label="@string/title_list"
-        tools:layout="@layout/fragment_list" />
-
-    <fragment
-        android:id="@+id/weatherFragment"
-        android:name="com.example.topacademy_android.presentation.weather.WeatherFragment"
-        android:label="@string/title_weather"
-        tools:layout="@layout/fragment_weather">
-        <argument
-            android:name="lat"
-            app:argType="float"
-            android:defaultValue="55.7558" />
-        <argument
-            android:name="lon"
-            app:argType="float"
-            android:defaultValue="37.6176" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/carListFragment"
-        android:name="com.example.topacademy_android.presentation.car.CarListFragment"
-        android:label="@string/title_car_list"
-        tools:layout="@layout/fragment_car_list" />
+    <navigation android:id="@+id/tabs_graph" app:startDestination="@id/calculatorFragment">
+        <fragment
+            android:id="@+id/calculatorFragment"
+            android:name="com.example.topacademy_android.presentation.calculator.CalculatorFragment"
+            android:label="CalculatorFragment"
+            tools:layout="@layout/fragment_calculator" />
+        <fragment
+            android:id="@+id/listFragment"
+            android:name="com.example.topacademy_android.presentation.list.ListFragment"
+            android:label="ListFragment"
+            tools:layout="@layout/fragment_list" />
+        <fragment
+            android:id="@+id/weatherFragment"
+            android:name="com.example.topacademy_android.presentation.weather.WeatherFragment"
+            android:label="WeatherFragment"
+            tools:layout="@layout/fragment_weather">
+            <argument
+                android:name="lat"
+                android:defaultValue="55.7558"
+                app:argType="float" />
+            <argument
+                android:name="lon"
+                android:defaultValue="37.6176"
+                app:argType="float" />
+        </fragment>
+        <fragment
+            android:id="@+id/carListFragment"
+            android:name="com.example.topacademy_android.presentation.car.CarListFragment"
+            android:label="CarListFragment"
+            tools:layout="@layout/fragment_car_list" />
+    </navigation>
 </navigation>

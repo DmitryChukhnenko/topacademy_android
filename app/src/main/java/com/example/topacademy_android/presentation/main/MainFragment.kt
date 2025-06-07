@@ -24,7 +24,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             val password = binding.etPassword.text.toString()
 
             if (viewModel.validateCredentials(email, password)) {
-                findNavController().navigate(R.id.action_mainFragment_to_homeFragment)
+                findNavController().navigate(R.id.action_mainFragment_to_tabs)
             } else {
                 binding.tvError.text = "Некорректный ввод"
             }

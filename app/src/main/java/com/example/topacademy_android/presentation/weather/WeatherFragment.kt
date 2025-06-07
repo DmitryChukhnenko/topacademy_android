@@ -17,7 +17,7 @@ class WeatherFragment : Fragment(R.layout.fragment_weather) {
     private val lat by lazy { arguments?.getFloat("lat") ?: 55.7558f }
     private val lon by lazy { arguments?.getFloat("lon") ?: 37.6176f }
 
-    private val viewModel: WeatherViewModel by viewModel()
+    public val viewModel: WeatherViewModel by viewModel()
     private lateinit var binding: FragmentWeatherBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

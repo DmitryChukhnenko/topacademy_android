@@ -19,4 +19,8 @@ class WeatherViewModel(
             _weatherData.value = getWeatherUseCase(lat, lon)
         }
     }
+
+    fun clearData() {
+        _weatherData.value = null
+    }
 }
